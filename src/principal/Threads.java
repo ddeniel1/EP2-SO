@@ -6,7 +6,7 @@ public class Threads {
 	private int propX;
 	private int propY;
 
-	public void main(String[] args) {
+	public void run() {
 		int propX = this.propX;
 		int propY = this.propY;
 		CriaThread[] arranjoDeThreads = new CriaThread[100];
@@ -14,12 +14,14 @@ public class Threads {
 		for (int i = 0; i < 100; i++) {
 			// Definicao de x para saber se eh leitor ou escritor.
 			int x = generator.nextInt(1, 2);
-			CriaThread novaThread;
+			CriaThread novaThread = null;
 			if (x == 1 && propX > 0) {
 				novaThread = new CriaThread("leitor");
+				novaThread.setPriority(2);
 				propX--;
 			} else if (x == 2 && propY > 0) {
 				novaThread = new CriaThread("escritor");
+				novaThread.setPriority(1);
 				propY--;
 			}
 			x = generator.nextInt(0, 99);
@@ -27,6 +29,21 @@ public class Threads {
 				x = generator.nextInt(0, 99);
 			arranjoDeThreads[x] = novaThread;
 		}
+		long inicio = System.currentTimeMillis();
+		
+		//Roda as threads
+		for (int i = 0; i < arranjoDeThreads.length; i++) {
+			arranjoDeThreads[i].start();
+			try {
+				arranjoDeThreads[i].join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		long fim = System.currentTimeMillis();
+		
+		System.out.println("Tempo total: "+(fim-inicio));
+		
 	}
 
 	public int getPropY() {

@@ -5,17 +5,19 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Main {
+	private static String[] livro = null;
 
 	public static void main(String[] args) throws IOException {
 
 		// Leitura do livro
-		String[] livro = new String[36242];
+		String[] palavras = new String[36242];
 		BufferedReader reader = new BufferedReader(new FileReader("bd.txt"));
 		int k = 0;
 		while (reader.ready()) {
-			livro[k] = reader.readLine();
+			palavras[k] = reader.readLine();
 			k++;
 		}
+		setLivro(palavras);
 		reader.close();
 
 		// Criacao das proporcoes
@@ -23,8 +25,17 @@ public class Main {
 		for (int i = 0, j = 100; i <= 100 && j >= 0; i++, j--) {
 			nova.setPropX(i);
 			nova.setPropY(j);
+			nova.run();
+			setLivro(palavras);
 		}
 
+	}
+
+	public static void setLivro(String[] palavras) {
+		livro = palavras;
+	}
+	public static String[] getLivro() {
+		return livro;
 	}
 
 }
