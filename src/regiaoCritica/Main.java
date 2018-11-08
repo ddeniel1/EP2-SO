@@ -1,11 +1,13 @@
-package principal;
+package regiaoCritica;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Main {
 	private static String[] livro = null;
+	private static PrintWriter writer;
 
 	public static void main(String[] args) throws IOException {
 
@@ -19,21 +21,33 @@ public class Main {
 		}
 		setLivro(palavras);
 		reader.close();
-
+		writer = new PrintWriter("log_Regiao_Critica.txt", "UTF-8");
 		// Criacao das proporcoes
-		principal.Threads nova = new principal.Threads();
+		Threads nova = new Threads();
 		for (int i = 0, j = 100; i <= 100 && j >= 0; i++, j--) {
+			writer.println("Leitores: " + i);
+			writer.println("Escritores: " + j);
 			nova.setPropX(i);
 			nova.setPropY(j);
 			nova.run();
 			setLivro(palavras);
+			writer.println();
 		}
+		writer.close();
 
+	}
+
+	public static void escreve(String escreve) {
+		writer.println(escreve);
 	}
 
 	public static void setLivro(String[] palavras) {
-		livro = palavras;
+		livro = new String[palavras.length];
+		for (int i = 0; i < palavras.length; i++) {
+			livro[i] = palavras[i];
+		}
 	}
+
 	public static String[] getLivro() {
 		return livro;
 	}

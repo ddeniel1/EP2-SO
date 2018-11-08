@@ -1,4 +1,4 @@
-package principal;
+package regiaoCritica;
 
 import java.util.concurrent.ThreadLocalRandom;
 
