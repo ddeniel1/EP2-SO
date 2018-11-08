@@ -13,7 +13,7 @@ public class Main {
 
 		// Leitura do livro
 		String[] palavras = new String[36242];
-		BufferedReader reader = new BufferedReader(new FileReader("bd.txt"));
+		BufferedReader reader = new BufferedReader(new FileReader("entrada/bd.txt"));
 		int k = 0;
 		while (reader.ready()) {
 			palavras[k] = reader.readLine();
@@ -21,7 +21,7 @@ public class Main {
 		}
 		setLivro(palavras);
 		reader.close();
-		writer = new PrintWriter("log_Regiao_Critica.txt", "UTF-8");
+		writer = new PrintWriter("log_de_saida/log_Regiao_Critica.txt", "UTF-8");
 		// Criacao das proporcoes
 		Threads nova = new Threads();
 		for (int i = 0, j = 100; i <= 100 && j >= 0; i++, j--) {
