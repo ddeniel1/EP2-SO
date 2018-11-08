@@ -1,4 +1,4 @@
-package regiaoCritica;
+package v2;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -53,13 +53,28 @@ public class Threads {
 		// Roda as threads
 		for (int i = 0; i < arranjoDeThreads.length; i++) {
 
-			arranjoDeThreads[i].start();
-
-			try {
-				arranjoDeThreads[i].join();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+			if (arranjoDeThreads[i].getName().equals("leitor")) {
+				while (escritores > 0)
+					;
+				leitores++;
+			} else {
+				while (escritores > 0 || leitores > 0) {
+					System.out.println("INFINITOOOO");
+				}
+				escritores++;
 			}
+			arranjoDeThreads[i].start();
+			if (!arranjoDeThreads[i].isAlive()) {
+				if (arranjoDeThreads[i].getName().equals("leitor"))
+					leitores--;
+				else
+					escritores--;
+			}
+
+			/*
+			 * try { arranjoDeThreads[i].join(); } catch (InterruptedException e) {
+			 * e.printStackTrace(); }
+			 */
 
 		}
 		long fim = System.currentTimeMillis();
