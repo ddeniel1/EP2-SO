@@ -2,124 +2,104 @@ package v2;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Threads {
-	private int propX;
-	private int propY;
-	private static int escritores = 0;
-	private static int leitores = 0;
+public class Threads extends Thread {
+	@SuppressWarnings("unused")
+	private String ler;
+	private String escrever = "MODIFICADO";
 
-	public void run() {
-		int propX = this.propX;
-		int propY = this.propY;
-		CriaThread[] arranjoDeThreads = new CriaThread[100];
+	@Override
+	synchronized public void run() {
 		ThreadLocalRandom generator = ThreadLocalRandom.current();
-		try {
-			for (int i = 0; i < 100; i++) {
 
-				// Definicao de x para saber se eh leitor ou escritor.
-				int x = generator.nextInt(1, 3);
-				CriaThread novaThread = null;
-				if (x == 1) {
-					if (propX > 0) {
-						novaThread = new CriaThread("leitor");
-						novaThread.setPriority(2);
-						propX--;
-					} else {
-						novaThread = new CriaThread("escritor");
-						novaThread.setPriority(1);
-						propY--;
-					}
-				} else if (x == 2) {
-					if (propY > 0) {
-						novaThread = new CriaThread("escritor");
-						novaThread.setPriority(1);
-						propY--;
-					} else {
-						novaThread = new CriaThread("leitor");
-						novaThread.setPriority(2);
-						propX--;
-					}
-				}
-				x = generator.nextInt(0, 99);
-				while (arranjoDeThreads[x] != null) {
-					x = generator.nextInt(0, 100);
-				}
-				arranjoDeThreads[x] = novaThread;
-			}
-		} catch (NullPointerException e) {
-			e.printStackTrace();
+		if (this.getName().startsWith("leitor"))
+			ComecaLeitor();
+		else
+			ComecaEscritor();
+		for (int i = 0; i < 100; i++) {
+			runThread(generator.nextInt(0, 36242));
 		}
-		long inicio = System.currentTimeMillis();
-		// Roda as threads
-		for (int i = 0; i < arranjoDeThreads.length; i++) {
+		if (this.getName().startsWith("leitor"))
+			AcabaLeitor();
+		else
+			AcabaEscritor();
+	}
 
-			if (arranjoDeThreads[i].getName().equals("leitor")) {
-				while (escritores > 0)
-					;
-				leitores++;
-			} else {
-				while (escritores > 0 || leitores > 0) {
-					System.out.println("INFINITOOOO");
-				}
-				escritores++;
+	synchronized private void ComecaEscritor() {
+		while (CriaThreads.isEscrevendo() || CriaThreads.isLendo()) {
+			System.out.println("INFINITY");
+			try {
+				wait(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-			arranjoDeThreads[i].start();
-			if (!arranjoDeThreads[i].isAlive()) {
-				if (arranjoDeThreads[i].getName().equals("leitor"))
-					leitores--;
-				else
-					escritores--;
-			}
-
-			/*
-			 * try { arranjoDeThreads[i].join(); } catch (InterruptedException e) {
-			 * e.printStackTrace(); }
-			 */
-
 		}
-		long fim = System.currentTimeMillis();
-
-		Main.escreve("Tempo total: 0."
-				+ ((fim - inicio) >= 10 ? ((fim - inicio) >= 100 ? (fim - inicio) : ("0" + (fim - inicio)))
-						: ("00" + (fim - inicio)))
-				+ " segundos");
-		System.out.println("Tempo total: 0."
-				+ ((fim - inicio) >= 10 ? ((fim - inicio) >= 100 ? (fim - inicio) : ("0" + (fim - inicio)))
-						: ("00" + (fim - inicio)))
-				+ " segundos");
+		CriaThreads.setEscrevendo(true);
 
 	}
 
-	public int getPropY() {
-		return propY;
+	synchronized private void ComecaLeitor() {
+		while (CriaThreads.isMutex() || CriaThreads.isEscrevendo()) {
+			try {
+				wait(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		CriaThreads.setMutex(true);
+		CriaThreads.setLeitores(CriaThreads.getLeitores() + 1);
+		if (CriaThreads.getLeitores() >= 1) {
+			CriaThreads.setLendo(true);
+		}
+		CriaThreads.setMutex(false);
+
 	}
 
-	public int getPropX() {
-		return propX;
+	synchronized private void AcabaLeitor() {
+		while (CriaThreads.isMutex()) {
+			try {
+				wait(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		CriaThreads.setMutex(true);
+		CriaThreads.setLeitores(CriaThreads.getLeitores() - 1);
+
+		if (CriaThreads.getLeitores() == 0) {
+			CriaThreads.setLendo(false);
+		}
+
+		notify();
+		CriaThreads.setMutex(false);
 	}
 
-	public int setPropX(int prop) {
-		return prop;
+	synchronized private void AcabaEscritor() {
+		notify();
+		CriaThreads.setEscrevendo(false);
 	}
 
-	public int setPropY(int prop) {
-		return prop;
+	public Threads(String args) {
+		if (args.startsWith("leitor"))
+			criaLeitor(args.substring(6));
+		else
+			criaEscritor(args.substring(8));
 	}
 
-	public static int getLeitores() {
-		return leitores;
+	private void criaLeitor(String args) {
+		this.setName("leitor" + args);
 	}
 
-	public static void setLeitores(int leitoresa) {
-		leitores = leitoresa;
+	private void criaEscritor(String args) {
+		this.setName("escritor" + args);
 	}
 
-	public static int getEscritores() {
-		return escritores;
+	public void runThread(int regex) {
+		String[] livro = Main.getLivro();
+		String nova = livro[regex];
+		if (this.getName().startsWith("leitor")) {
+			this.ler = nova;
+		} else {
+			livro[regex] = escrever;
+		}
 	}
-
-	public static void setEscritores(int escritoresa) {
-		escritores = escritoresa;
-	}
-
 }

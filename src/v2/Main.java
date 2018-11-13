@@ -23,7 +23,7 @@ public class Main {
 		reader.close();
 		writer = new PrintWriter("log_de_saida/log_2.txt", "UTF-8");
 		// Criacao das proporcoes
-		Threads nova = new Threads();
+		CriaThreads nova = new CriaThreads();
 		for (int i = 0, j = 100; i <= 100 && j >= 0; i++, j--) {
 			writer.println("Leitores: " + i);
 			writer.println("Escritores: " + j);

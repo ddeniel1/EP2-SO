@@ -1,198 +1,198 @@
 Leitores: 0
 Escritores: 100
-Tempo total: 0.190 segundos
+Tempo total: 0.186 segundos
 
 Leitores: 1
 Escritores: 99
-Tempo total: 0.192 segundos
+Tempo total: 0.182 segundos
 
 Leitores: 2
 Escritores: 98
-Tempo total: 0.195 segundos
+Tempo total: 0.190 segundos
 
 Leitores: 3
 Escritores: 97
-Tempo total: 0.200 segundos
+Tempo total: 0.189 segundos
 
 Leitores: 4
 Escritores: 96
-Tempo total: 0.184 segundos
+Tempo total: 0.189 segundos
 
 Leitores: 5
 Escritores: 95
-Tempo total: 0.177 segundos
+Tempo total: 0.188 segundos
 
 Leitores: 6
 Escritores: 94
-Tempo total: 0.180 segundos
+Tempo total: 0.185 segundos
 
 Leitores: 7
 Escritores: 93
-Tempo total: 0.190 segundos
+Tempo total: 0.196 segundos
 
 Leitores: 8
 Escritores: 92
-Tempo total: 0.181 segundos
+Tempo total: 0.188 segundos
 
 Leitores: 9
 Escritores: 91
-Tempo total: 0.174 segundos
+Tempo total: 0.189 segundos
 
 Leitores: 10
 Escritores: 90
-Tempo total: 0.185 segundos
+Tempo total: 0.192 segundos
 
 Leitores: 11
 Escritores: 89
-Tempo total: 0.187 segundos
+Tempo total: 0.182 segundos
 
 Leitores: 12
 Escritores: 88
-Tempo total: 0.188 segundos
+Tempo total: 0.183 segundos
 
 Leitores: 13
 Escritores: 87
-Tempo total: 0.186 segundos
+Tempo total: 0.188 segundos
 
 Leitores: 14
 Escritores: 86
-Tempo total: 0.191 segundos
+Tempo total: 0.183 segundos
 
 Leitores: 15
 Escritores: 85
-Tempo total: 0.178 segundos
+Tempo total: 0.195 segundos
 
 Leitores: 16
 Escritores: 84
-Tempo total: 0.192 segundos
+Tempo total: 0.184 segundos
 
 Leitores: 17
 Escritores: 83
-Tempo total: 0.182 segundos
+Tempo total: 0.188 segundos
 
 Leitores: 18
 Escritores: 82
-Tempo total: 0.186 segundos
+Tempo total: 0.194 segundos
 
 Leitores: 19
 Escritores: 81
-Tempo total: 0.184 segundos
+Tempo total: 0.188 segundos
 
 Leitores: 20
 Escritores: 80
-Tempo total: 0.187 segundos
+Tempo total: 0.183 segundos
 
 Leitores: 21
 Escritores: 79
-Tempo total: 0.182 segundos
+Tempo total: 0.187 segundos
 
 Leitores: 22
 Escritores: 78
-Tempo total: 0.190 segundos
+Tempo total: 0.187 segundos
 
 Leitores: 23
 Escritores: 77
-Tempo total: 0.184 segundos
+Tempo total: 0.190 segundos
 
 Leitores: 24
 Escritores: 76
-Tempo total: 0.190 segundos
+Tempo total: 0.187 segundos
 
 Leitores: 25
 Escritores: 75
-Tempo total: 0.185 segundos
+Tempo total: 0.192 segundos
 
 Leitores: 26
 Escritores: 74
-Tempo total: 0.183 segundos
+Tempo total: 0.185 segundos
 
 Leitores: 27
 Escritores: 73
-Tempo total: 0.186 segundos
+Tempo total: 0.192 segundos
 
 Leitores: 28
 Escritores: 72
-Tempo total: 0.177 segundos
+Tempo total: 0.193 segundos
 
 Leitores: 29
 Escritores: 71
-Tempo total: 0.188 segundos
+Tempo total: 0.184 segundos
 
 Leitores: 30
 Escritores: 70
-Tempo total: 0.184 segundos
+Tempo total: 0.190 segundos
 
 Leitores: 31
 Escritores: 69
-Tempo total: 0.192 segundos
+Tempo total: 0.186 segundos
 
 Leitores: 32
 Escritores: 68
-Tempo total: 0.188 segundos
+Tempo total: 0.190 segundos
 
 Leitores: 33
 Escritores: 67
-Tempo total: 0.191 segundos
+Tempo total: 0.184 segundos
 
 Leitores: 34
 Escritores: 66
-Tempo total: 0.182 segundos
+Tempo total: 0.189 segundos
 
 Leitores: 35
 Escritores: 65
-Tempo total: 0.185 segundos
+Tempo total: 0.190 segundos
 
 Leitores: 36
 Escritores: 64
-Tempo total: 0.182 segundos
+Tempo total: 0.197 segundos
 
 Leitores: 37
 Escritores: 63
-Tempo total: 0.177 segundos
+Tempo total: 0.196 segundos
 
 Leitores: 38
 Escritores: 62
-Tempo total: 0.184 segundos
+Tempo total: 0.188 segundos
 
 Leitores: 39
 Escritores: 61
-Tempo total: 0.180 segundos
+Tempo total: 0.189 segundos
 
 Leitores: 40
 Escritores: 60
-Tempo total: 0.181 segundos
+Tempo total: 0.189 segundos
 
 Leitores: 41
 Escritores: 59
-Tempo total: 0.178 segundos
+Tempo total: 0.186 segundos
 
 Leitores: 42
 Escritores: 58
-Tempo total: 0.177 segundos
+Tempo total: 0.184 segundos
 
 Leitores: 43
 Escritores: 57
-Tempo total: 0.169 segundos
+Tempo total: 0.189 segundos
 
 Leitores: 44
 Escritores: 56
-Tempo total: 0.168 segundos
+Tempo total: 0.189 segundos
 
 Leitores: 45
 Escritores: 55
-Tempo total: 0.179 segundos
+Tempo total: 0.187 segundos
 
 Leitores: 46
 Escritores: 54
-Tempo total: 0.181 segundos
+Tempo total: 0.189 segundos
 
 Leitores: 47
 Escritores: 53
-Tempo total: 0.181 segundos
+Tempo total: 0.185 segundos
 
 Leitores: 48
 Escritores: 52
-Tempo total: 0.182 segundos
+Tempo total: 0.185 segundos
 
 Leitores: 49
 Escritores: 51
@@ -200,11 +200,11 @@ Tempo total: 0.183 segundos
 
 Leitores: 50
 Escritores: 50
-Tempo total: 0.183 segundos
+Tempo total: 0.189 segundos
 
 Leitores: 51
 Escritores: 49
-Tempo total: 0.177 segundos
+Tempo total: 0.188 segundos
 
 Leitores: 52
 Escritores: 48
@@ -212,43 +212,43 @@ Tempo total: 0.184 segundos
 
 Leitores: 53
 Escritores: 47
-Tempo total: 0.168 segundos
+Tempo total: 0.180 segundos
 
 Leitores: 54
 Escritores: 46
-Tempo total: 0.178 segundos
+Tempo total: 0.179 segundos
 
 Leitores: 55
 Escritores: 45
-Tempo total: 0.176 segundos
+Tempo total: 0.178 segundos
 
 Leitores: 56
 Escritores: 44
-Tempo total: 0.180 segundos
+Tempo total: 0.185 segundos
 
 Leitores: 57
 Escritores: 43
-Tempo total: 0.177 segundos
+Tempo total: 0.193 segundos
 
 Leitores: 58
 Escritores: 42
-Tempo total: 0.187 segundos
+Tempo total: 0.181 segundos
 
 Leitores: 59
 Escritores: 41
-Tempo total: 0.181 segundos
+Tempo total: 0.190 segundos
 
 Leitores: 60
 Escritores: 40
-Tempo total: 0.186 segundos
+Tempo total: 0.192 segundos
 
 Leitores: 61
 Escritores: 39
-Tempo total: 0.181 segundos
+Tempo total: 0.189 segundos
 
 Leitores: 62
 Escritores: 38
-Tempo total: 0.182 segundos
+Tempo total: 0.193 segundos
 
 Leitores: 63
 Escritores: 37
@@ -256,75 +256,75 @@ Tempo total: 0.182 segundos
 
 Leitores: 64
 Escritores: 36
-Tempo total: 0.179 segundos
+Tempo total: 0.186 segundos
 
 Leitores: 65
 Escritores: 35
-Tempo total: 0.184 segundos
+Tempo total: 0.186 segundos
 
 Leitores: 66
 Escritores: 34
-Tempo total: 0.189 segundos
+Tempo total: 0.205 segundos
 
 Leitores: 67
 Escritores: 33
-Tempo total: 0.184 segundos
+Tempo total: 0.213 segundos
 
 Leitores: 68
 Escritores: 32
-Tempo total: 0.186 segundos
+Tempo total: 0.193 segundos
 
 Leitores: 69
 Escritores: 31
-Tempo total: 0.184 segundos
+Tempo total: 0.190 segundos
 
 Leitores: 70
 Escritores: 30
-Tempo total: 0.183 segundos
+Tempo total: 0.196 segundos
 
 Leitores: 71
 Escritores: 29
-Tempo total: 0.182 segundos
+Tempo total: 0.198 segundos
 
 Leitores: 72
 Escritores: 28
-Tempo total: 0.188 segundos
+Tempo total: 0.195 segundos
 
 Leitores: 73
 Escritores: 27
-Tempo total: 0.181 segundos
+Tempo total: 0.190 segundos
 
 Leitores: 74
 Escritores: 26
-Tempo total: 0.186 segundos
+Tempo total: 0.198 segundos
 
 Leitores: 75
 Escritores: 25
-Tempo total: 0.174 segundos
+Tempo total: 0.193 segundos
 
 Leitores: 76
 Escritores: 24
-Tempo total: 0.184 segundos
+Tempo total: 0.188 segundos
 
 Leitores: 77
 Escritores: 23
-Tempo total: 0.183 segundos
+Tempo total: 0.188 segundos
 
 Leitores: 78
 Escritores: 22
-Tempo total: 0.195 segundos
+Tempo total: 0.205 segundos
 
 Leitores: 79
 Escritores: 21
-Tempo total: 0.187 segundos
+Tempo total: 0.204 segundos
 
 Leitores: 80
 Escritores: 20
-Tempo total: 0.195 segundos
+Tempo total: 0.192 segundos
 
 Leitores: 81
 Escritores: 19
-Tempo total: 0.185 segundos
+Tempo total: 0.186 segundos
 
 Leitores: 82
 Escritores: 18
@@ -332,43 +332,43 @@ Tempo total: 0.189 segundos
 
 Leitores: 83
 Escritores: 17
-Tempo total: 0.185 segundos
+Tempo total: 0.199 segundos
 
 Leitores: 84
 Escritores: 16
-Tempo total: 0.189 segundos
+Tempo total: 0.200 segundos
 
 Leitores: 85
 Escritores: 15
-Tempo total: 0.192 segundos
+Tempo total: 0.183 segundos
 
 Leitores: 86
 Escritores: 14
-Tempo total: 0.190 segundos
+Tempo total: 0.188 segundos
 
 Leitores: 87
 Escritores: 13
-Tempo total: 0.194 segundos
+Tempo total: 0.185 segundos
 
 Leitores: 88
 Escritores: 12
-Tempo total: 0.190 segundos
+Tempo total: 0.192 segundos
 
 Leitores: 89
 Escritores: 11
-Tempo total: 0.194 segundos
+Tempo total: 0.189 segundos
 
 Leitores: 90
 Escritores: 10
-Tempo total: 0.188 segundos
+Tempo total: 0.199 segundos
 
 Leitores: 91
 Escritores: 9
-Tempo total: 0.195 segundos
+Tempo total: 0.187 segundos
 
 Leitores: 92
 Escritores: 8
-Tempo total: 0.189 segundos
+Tempo total: 0.184 segundos
 
 Leitores: 93
 Escritores: 7
@@ -376,29 +376,29 @@ Tempo total: 0.187 segundos
 
 Leitores: 94
 Escritores: 6
-Tempo total: 0.185 segundos
+Tempo total: 0.190 segundos
 
 Leitores: 95
 Escritores: 5
-Tempo total: 0.186 segundos
+Tempo total: 0.191 segundos
 
 Leitores: 96
 Escritores: 4
-Tempo total: 0.198 segundos
+Tempo total: 0.187 segundos
 
 Leitores: 97
 Escritores: 3
-Tempo total: 0.184 segundos
+Tempo total: 0.187 segundos
 
 Leitores: 98
 Escritores: 2
-Tempo total: 0.195 segundos
+Tempo total: 0.183 segundos
 
 Leitores: 99
 Escritores: 1
-Tempo total: 0.192 segundos
+Tempo total: 0.195 segundos
 
 Leitores: 100
 Escritores: 0
-Tempo total: 0.194 segundos
+Tempo total: 0.185 segundos
 
