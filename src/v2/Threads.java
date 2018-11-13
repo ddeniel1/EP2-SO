@@ -9,73 +9,55 @@ public class Threads extends Thread {
 
 	@Override
 	synchronized public void run() {
+		CriaThreads.setAlives(1);
 		ThreadLocalRandom generator = ThreadLocalRandom.current();
+		try {
+			if (this.getName().startsWith("leitor"))
+				ComecaLeitor();
+			
+			else
+				ComecaEscritor();
+			for (int i = 0; i < 100; i++) {
+				runThread(generator.nextInt(0, 36242));
+			}
+			sleep(1);
 
-		if (this.getName().startsWith("leitor"))
-			ComecaLeitor();
-		else
-			ComecaEscritor();
-		for (int i = 0; i < 100; i++) {
-			runThread(generator.nextInt(0, 36242));
+			if (this.getName().startsWith("leitor"))
+				AcabaLeitor();
+			else
+				AcabaEscritor();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
-		if (this.getName().startsWith("leitor"))
-			AcabaLeitor();
-		else
-			AcabaEscritor();
 	}
 
-	synchronized private void ComecaEscritor() {
-		while (CriaThreads.isEscrevendo() || CriaThreads.isLendo()) {
-			System.out.println("INFINITY");
-			try {
-				wait(100);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-		CriaThreads.setEscrevendo(true);
-
+	synchronized private void ComecaEscritor() throws InterruptedException {
+		CriaThreads.escrevendo.acquire();
 	}
 
-	synchronized private void ComecaLeitor() {
-		while (CriaThreads.isMutex() || CriaThreads.isEscrevendo()) {
-			try {
-				wait(100);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+	synchronized private void ComecaLeitor() throws InterruptedException {
+		CriaThreads.mutex.acquire();
+		CriaThreads.setLeitores(1);
+		if (CriaThreads.getLeitores() == 1) {
+			CriaThreads.escrevendo.acquire();
 		}
-		CriaThreads.setMutex(true);
-		CriaThreads.setLeitores(CriaThreads.getLeitores() + 1);
-		if (CriaThreads.getLeitores() >= 1) {
-			CriaThreads.setLendo(true);
-		}
-		CriaThreads.setMutex(false);
-
+		CriaThreads.mutex.release();
 	}
 
-	synchronized private void AcabaLeitor() {
-		while (CriaThreads.isMutex()) {
-			try {
-				wait(100);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-		CriaThreads.setMutex(true);
-		CriaThreads.setLeitores(CriaThreads.getLeitores() - 1);
+	synchronized private void AcabaLeitor() throws InterruptedException {
+		CriaThreads.mutex.acquire();
+		CriaThreads.setLeitores(-1);
 
 		if (CriaThreads.getLeitores() == 0) {
-			CriaThreads.setLendo(false);
+			CriaThreads.escrevendo.release();
 		}
-
-		notify();
-		CriaThreads.setMutex(false);
+		CriaThreads.setAlives(-1);
+		CriaThreads.mutex.release();
 	}
 
 	synchronized private void AcabaEscritor() {
-		notify();
-		CriaThreads.setEscrevendo(false);
+		CriaThreads.setAlives(-1);
+		CriaThreads.escrevendo.release();
 	}
 
 	public Threads(String args) {

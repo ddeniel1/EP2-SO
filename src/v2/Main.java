@@ -24,7 +24,8 @@ public class Main {
 		writer = new PrintWriter("log_de_saida/log_2.txt", "UTF-8");
 		// Criacao das proporcoes
 		CriaThreads nova = new CriaThreads();
-		for (int i = 0, j = 100; i <= 100 && j >= 0; i++, j--) {
+		for (int j = 0, i = 100; j <= 100 && i >= 0; j++, i--) {
+			nova = new CriaThreads();
 			writer.println("Leitores: " + i);
 			writer.println("Escritores: " + j);
 			nova.setPropX(i);

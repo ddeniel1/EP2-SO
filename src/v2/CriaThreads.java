@@ -1,14 +1,15 @@
 package v2;
 
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class CriaThreads {
 	private int propX;
 	private int propY;
+	private static int alives = 0;
 	private static int leitores = 0;
-	private static boolean mutex;
-	private static boolean escrevendo;
-	private static boolean lendo;
+	public static Semaphore mutex = new Semaphore(1, true);
+	public static Semaphore escrevendo = new Semaphore(2, true);
 
 	public void run() {
 		int propX = this.propX;
@@ -57,9 +58,10 @@ public class CriaThreads {
 		// Roda as threads
 
 		for (int i = 0; i < arranjoDeThreads.length; i++) {
-			
 			arranjoDeThreads[i].start();
 		}
+
+		while (alives > 0)System.out.print("");
 		long fim = System.currentTimeMillis();
 
 		// Escreve log de saida
@@ -94,31 +96,14 @@ public class CriaThreads {
 	}
 
 	public static void setLeitores(int leitoresa) {
-		leitores = leitoresa;
+		leitores += leitoresa;
 	}
 
-	public static boolean isMutex() {
-		return mutex;
+	public static int getAlives() {
+		return alives;
 	}
 
-	public static void setMutex(boolean mutex) {
-		CriaThreads.mutex = mutex;
+	public static void setAlives(int alivesa) {
+		alives += alivesa;
 	}
-
-	public static boolean isEscrevendo() {
-		return escrevendo;
-	}
-
-	public static void setEscrevendo(boolean escrevendo) {
-		CriaThreads.escrevendo = escrevendo;
-	}
-
-	public static boolean isLendo() {
-		return lendo;
-	}
-
-	public static void setLendo(boolean lendo) {
-		CriaThreads.lendo = lendo;
-	}
-
 }
