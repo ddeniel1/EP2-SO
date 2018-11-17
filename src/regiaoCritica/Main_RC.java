@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class Main {
+public class Main_RC {
 	private static String[] livro = null;
 	private static PrintWriter writer;
 
@@ -23,8 +23,8 @@ public class Main {
 		reader.close();
 		writer = new PrintWriter("log_de_saida/log_Regiao_Critica.txt", "UTF-8");
 		// Criacao das proporcoes
-		Threads nova = new Threads();
-		for (int i = 0, j = 100; i <= 100 && j >= 0; i++, j--) {
+		CriaThreads nova = new CriaThreads();
+		for (int j = 0, i = 100; j <= 100 && i >= 0; j++, i--) {
 			writer.println("Leitores: " + i);
 			writer.println("Escritores: " + j);
 			nova.setPropX(i);

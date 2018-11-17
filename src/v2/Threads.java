@@ -8,56 +8,40 @@ public class Threads extends Thread {
 	private String escrever = "MODIFICADO";
 
 	@Override
-	synchronized public void run() {
-		CriaThreads.setAlives(1);
-		ThreadLocalRandom generator = ThreadLocalRandom.current();
+	public void run() {
 		try {
 			if (this.getName().startsWith("leitor"))
 				ComecaLeitor();
-			
 			else
 				ComecaEscritor();
-			for (int i = 0; i < 100; i++) {
-				runThread(generator.nextInt(0, 36242));
-			}
-			sleep(1);
 
-			if (this.getName().startsWith("leitor"))
-				AcabaLeitor();
-			else
-				AcabaEscritor();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+
 	}
 
-	synchronized private void ComecaEscritor() throws InterruptedException {
+	private void ComecaEscritor() throws InterruptedException {
 		CriaThreads.escrevendo.acquire();
+		runThread();
+		CriaThreads.escrevendo.release();
 	}
 
-	synchronized private void ComecaLeitor() throws InterruptedException {
+	private void ComecaLeitor() throws InterruptedException {
 		CriaThreads.mutex.acquire();
 		CriaThreads.setLeitores(1);
 		if (CriaThreads.getLeitores() == 1) {
 			CriaThreads.escrevendo.acquire();
 		}
 		CriaThreads.mutex.release();
-	}
-
-	synchronized private void AcabaLeitor() throws InterruptedException {
+		runThread();
 		CriaThreads.mutex.acquire();
 		CriaThreads.setLeitores(-1);
 
 		if (CriaThreads.getLeitores() == 0) {
 			CriaThreads.escrevendo.release();
 		}
-		CriaThreads.setAlives(-1);
 		CriaThreads.mutex.release();
-	}
-
-	synchronized private void AcabaEscritor() {
-		CriaThreads.setAlives(-1);
-		CriaThreads.escrevendo.release();
 	}
 
 	public Threads(String args) {
@@ -75,13 +59,18 @@ public class Threads extends Thread {
 		this.setName("escritor" + args);
 	}
 
-	public void runThread(int regex) {
+	public void runThread() throws InterruptedException {
+		ThreadLocalRandom generator = ThreadLocalRandom.current();
 		String[] livro = Main.getLivro();
-		String nova = livro[regex];
-		if (this.getName().startsWith("leitor")) {
-			this.ler = nova;
-		} else {
-			livro[regex] = escrever;
+		for (int i = 0; i < 100; i++) {
+			int regex = generator.nextInt(0, 36242);
+			String nova = livro[regex];
+			if (this.getName().startsWith("leitor")) {
+				this.ler = nova;
+			} else {
+				livro[regex] = escrever;
+			}
 		}
+		sleep(1);
 	}
 }

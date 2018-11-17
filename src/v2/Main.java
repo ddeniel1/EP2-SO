@@ -21,7 +21,7 @@ public class Main {
 		}
 		setLivro(palavras);
 		reader.close();
-		writer = new PrintWriter("log_de_saida/log_2.txt", "UTF-8");
+		writer = new PrintWriter("log_de_saida/log_implementação_2.txt", "UTF-8");
 		// Criacao das proporcoes
 		CriaThreads nova = new CriaThreads();
 		for (int j = 0, i = 100; j <= 100 && i >= 0; j++, i--) {
