@@ -1,4 +1,4 @@
-package regiaoCritica;
+package v3;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,12 +6,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class Main_RC {
+
+public class Main_v3 {
 	private static String[] livro = null;
 	private static PrintWriter writer;
 	private static FileWriter writer_arq;
 
-	public static void main(String[] args) throws IOException, InterruptedException {
+	public static void main(String[] args) throws IOException {
 
 		// Leitura do livro
 		String[] palavras = new String[36242];
@@ -23,8 +24,8 @@ public class Main_RC {
 		}
 		setLivro(palavras);
 		reader.close();
-		writer = new PrintWriter("log_de_saida/log_Regiao_Critica.txt", "UTF-8");
-		writer_arq = new FileWriter("log_de_saida/log_1.csv");
+		writer = new PrintWriter("log_de_saida/log_implementação_3.txt", "UTF-8");
+		writer_arq = new FileWriter("log_de_saida/log_3.csv");
 		// Criacao das proporcoes
 		CriaThreads nova = new CriaThreads();
 		writer_arq.append("Leitores,Escritores,Tempo,Version\n");
@@ -36,7 +37,7 @@ public class Main_RC {
 			nova.setPropY(j);
 			nova.run();
 			setLivro(palavras);
-			writer_arq.append(",1\n");
+			writer_arq.append(",3\n");
 			writer.println();
 		}
 		writer.close();
@@ -50,6 +51,7 @@ public class Main_RC {
 		try {
 			writer_arq.append(""+escreve.substring(13, 18));
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -1,0 +1,111 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Gráficos.R},
+            pdfauthor={Daniel Filho},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Gráficos.R}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Daniel Filho}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{Sat Nov 17 17:24:37 2018}
+
+
+\begin{document}
+\maketitle
+
+Values Using Omnibus Model) \#\#\#\# x \textless{}- seq(from =
+max(log\_1\(Leitores), to = 0) y <- array(NA, dim = length(x)) y.upper <- y y.lower <- y for (i in 1:length(x)) {  raw.y <- coef(summary(update(linear.model, . ~ . - log_1\)Leitores
++
+eval(log\_1\(Leitores -  x[i]))))[1, 1]  raw.se <- coef(summary(update(linear.model, . ~ . - log_1\)Leitores
++ eval(log\_1\$Leitores - x{[}i{]})))){[}1, 2{]} y{[}i{]} \textless{}-
+raw.y y.upper{[}i{]} \textless{}- raw.y + raw.se y.lower{[}i{]}
+\textless{}- raw.y - raw.se \}
+
+\paragraph{Create Plot}\label{create-plot}
+
+op \textless{}- par(cex.main = 1.5, mar = c(5, 6, 4, 5) + 0.1, mgp =
+c(3.5, 1, 0), cex.lab = 1.5, font.lab = 2, cex.axis = 1.5, bty = ``n'',
+las = 1) plot(x, y, xlab = ``'', ylab = ``'', type = ``n'', xlim =
+c(max(x),0), ylim = c(0, 0.140), axes = FALSE) axis(1) axis(2)
+polygon(c(x, rev(x)), c(y.upper, rev(y.lower)), col =
+``lightsteelblue'', border = NA) lines(x, y, lwd = 2)
+mtext(``Leitores'', side = 1, line = 2.5, cex = 1.5) mtext(``Tempo'',
+side = 2, line = 3.7, cex = 1.5, las = 0) ```
+
+
+\end{document}

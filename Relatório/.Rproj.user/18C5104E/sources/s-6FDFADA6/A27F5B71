@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1542482038030.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A27F5B71",
+    "lastKnownWriteTime" : 1542486017,
+    "last_content_update" : 1542503129783,
+    "path" : "G:/Meu Drive/Matérias 4º Semestre/SO/EP 2/Relatório/Gráficos.R",
+    "project_path" : "Gráficos.R",
+    "properties" : {
+        "cursorPosition" : "38,61",
+        "notebook_format" : "pdf_document",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,17 +1,20 @@
-package v2;
+package v3;
 
-import java.io.IOException;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class CriaThreads {
+	public static boolean fila = false;
 	private int propX;
 	private int propY;
-	public static int leitores = 0;
+	private static int leitores = 0;
+	private static int escritores = 0;
 	public static Semaphore mutex = new Semaphore(1);
+	public static Semaphore mutex2 = new Semaphore(1);
+	public static Semaphore lendo = new Semaphore(1, true);
 	public static Semaphore escrevendo = new Semaphore(1);
 
-	public void run() throws NumberFormatException, IOException {
+	public void run() {
 		int tempo = 0;
 		int propYBackUp = getPropY();
 		int propXBackUp = getPropX();
@@ -19,7 +22,7 @@ public class CriaThreads {
 			setPropX(propXBackUp);
 			setPropY(propYBackUp);
 
-			Threads[] arranjoDeThreads = new Threads[100];
+			Threads_outra[] arranjoDeThreads = new Threads_outra[100];
 			ThreadLocalRandom generator = ThreadLocalRandom.current();
 			try {
 				// Alocacao das threads no array
@@ -27,10 +30,10 @@ public class CriaThreads {
 
 					// Definicao de x para saber se eh leitor ou escritor.
 					int x = 0;
-					Threads novaThread = null;
+					Threads_outra novaThread = null;
 
 					if (this.getPropX() > 0) {
-						novaThread = new Threads("leitor " + i);
+						novaThread = new Threads_outra("leitor " + i);
 						this.setPropX(this.getPropX() - 1);
 						x = generator.nextInt(0, 100);
 						while (arranjoDeThreads[x] != null) {
@@ -38,7 +41,7 @@ public class CriaThreads {
 						}
 						arranjoDeThreads[x] = novaThread;
 					} else {
-						novaThread = new Threads("escritor " + i);
+						novaThread = new Threads_outra("escritor " + i);
 						this.setPropY(this.getPropY() - 1);
 						x = generator.nextInt(0, 100);
 						while (arranjoDeThreads[x] != null) {
@@ -66,16 +69,15 @@ public class CriaThreads {
 				}
 			}
 			long fim = System.currentTimeMillis();
-			tempo += (fim - inicio);
+			tempo+=(fim-inicio);
 		}
 		tempo /=50;
 		// Escreve log de saida
 		String tempoString = "Tempo total: 0." + (tempo >= 10 ? (tempo >= 100 ? tempo : ("0" + tempo)) : ("00" + tempo))
 				+ " segundos";
-
-		Main.escreve(tempoString);
+		Main_v3.escreve(tempoString);
 		System.out.println(tempoString);
-		tempo = 0;
+		tempo=0;
 	}
 
 	public static int getLeitores() {
@@ -100,5 +102,13 @@ public class CriaThreads {
 
 	public void setPropX(int propX) {
 		this.propX = propX;
+	}
+
+	public static int getEscritores() {
+		return escritores;
+	}
+
+	public static void setEscritores(int escritoresa) {
+		escritores += escritoresa;
 	}
 }
