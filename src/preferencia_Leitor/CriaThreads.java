@@ -1,4 +1,4 @@
-package Preferencia_Leitor;
+package preferencia_Leitor;
 
 import java.io.IOException;
 import java.util.concurrent.Semaphore;

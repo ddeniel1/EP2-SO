@@ -1,4 +1,4 @@
-package Preferencia_Leitor;
+package preferencia_Leitor;
 
 import java.util.concurrent.ThreadLocalRandom;
 

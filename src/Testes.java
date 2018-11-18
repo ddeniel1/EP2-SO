@@ -1,7 +1,7 @@
 import java.io.IOException;
 
-import Preferencia_Leitor.*;
 import preferencia_Escritor.*;
+import preferencia_Leitor.*;
 import regiaoCritica.*;
 public class Testes {
 
