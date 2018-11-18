@@ -6,12 +6,13 @@ import java.util.concurrent.ThreadLocalRandom;
 public class CriaThreads {
 	private int propX;
 	private int propY;
+	private double testes = 100;
 
 	public void run() throws InterruptedException {
 		int tempo = 0;
 		int propYBackUp = getPropY();
 		int propXBackUp = getPropX();
-		for (int cases = 0; cases < 50; cases++) {
+		for (int cases = 0; cases < testes; cases++) {
 			setPropX(propXBackUp);
 			setPropY(propYBackUp);
 
@@ -19,7 +20,7 @@ public class CriaThreads {
 			ThreadLocalRandom generator = ThreadLocalRandom.current();
 			try {
 				// Alocacao das threads no array
-				for (int i = 0; i < 100; i++) {
+				for (int i = 0; i < testes; i++) {
 
 					// Definicao de x para saber se eh leitor ou escritor.
 					int x = 0;
@@ -65,7 +66,7 @@ public class CriaThreads {
 			long fim = System.currentTimeMillis();
 			tempo+=(fim-inicio);
 		}
-		tempo /=50;
+		tempo = (int) Math.round(tempo / testes);
 		// Escreve log de saida
 		String tempoString = "Tempo total: 0." + (tempo >= 10 ? (tempo >= 100 ? tempo : ("0" + tempo)) : ("00" + tempo))
 				+ " segundos";
