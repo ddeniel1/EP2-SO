@@ -9,9 +9,7 @@ public class CriaThreads {
 	private int propY;
 	private double testes = 100;
 	private static int leitores = 0;
-	private static int escritores = 0;
 	public static Semaphore mutex = new Semaphore(1);
-	public static Semaphore mutex2 = new Semaphore(1);
 	public static Semaphore lendo = new Semaphore(1, true);
 	public static Semaphore escrevendo = new Semaphore(1, true);
 	public static Semaphore bloqueia = new Semaphore(1, true);
@@ -106,11 +104,4 @@ public class CriaThreads {
 		this.propX = propX;
 	}
 
-	public static int getEscritores() {
-		return escritores;
-	}
-
-	public static void setEscritores(int escritoresa) {
-		escritores += escritoresa;
-	}
 }

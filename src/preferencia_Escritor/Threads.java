@@ -27,11 +27,6 @@ public class Threads extends Thread {
 		CriaThreads.bloqueia.release();
 		runThread();
 		CriaThreads.escrevendo.release();
-		CriaThreads.mutex2.acquire();
-		CriaThreads.setEscritores(-1);
-		if (CriaThreads.getEscritores() == 0)
-			CriaThreads.lendo.release();
-		CriaThreads.mutex2.release();
 	}
 
 	private void ComecaLeitor() throws InterruptedException {
