@@ -4,11 +4,11 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class CriaThreads {
-	public static boolean fila = false;
 	private int propX;
 	private int propY;
 	private double testes = 100;
 	private static int leitores = 0;
+	// Semaforos com fairness
 	public static Semaphore mutex = new Semaphore(1);
 	public static Semaphore lendo = new Semaphore(1, true);
 	public static Semaphore escrevendo = new Semaphore(1, true);

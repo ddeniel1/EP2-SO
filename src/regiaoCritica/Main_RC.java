@@ -1,6 +1,7 @@
 package regiaoCritica;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,15 +15,17 @@ public class Main_RC {
 	public static void main(String[] args) throws IOException, InterruptedException {
 
 		// Leitura do livro
+		// Leitura do livro
 		String[] palavras = new String[36242];
 		BufferedReader reader = new BufferedReader(new FileReader("entrada/bd.txt"));
+		
 		int k = 0;
 		while (reader.ready()) {
 			palavras[k] = reader.readLine();
 			k++;
 		}
 		setLivro(palavras);
-		reader.close();
+			reader.close();
 		writer = new PrintWriter("log_de_saida/log_Regiao_Critica.txt", "UTF-8");
 		writer_arq = new FileWriter("log_de_saida/log_1.csv");
 		// Criacao das proporcoes
